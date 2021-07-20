@@ -10,9 +10,6 @@ root=Tk()
 total_12=0
 value=StringVar()
 value.set('')
-def saveas():
-    global saveas
-    saveas = filedialog.asksaveasfile(filetype=(("mp4","*.mp4"),('mp4','*.mp4')),title='Save Mp4 File')
 def call(total, recvd, ratio, rate, eta):
     global total12
     r=('{0:.2f}'.format(ratio*100))

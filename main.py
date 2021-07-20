@@ -94,7 +94,7 @@ leree=Label(root,text='',font=('Font',15),fg='darkblue')
 leree.place(y=210,x=1)
 l=Progressbar(root,mode='determinate',length=300,maximum=total_12)
 l.place(y=250,x=165)
-time_left_lab=Label(root,text='343',font=('Font',15),fg='darkblue')
+time_left_lab=Label(root,text='',font=('Font',15),fg='darkblue')
 time_left_lab.place(y=250+45+45,x=150)#
 file_size_lab=Label(root,text='',font=('Font',15),fg='darkblue')
 file_size_lab.place(x=375,y=250+45+45)

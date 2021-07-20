@@ -1,4 +1,3 @@
-
 from  tkinter import*
 from tkinter import messagebox
 import pafy
@@ -32,18 +31,19 @@ def call(total, recvd, ratio, rate, eta):
         pass
 times_called=0
 def down_Video():
-    url=input_entry.get()
     try:
+        url=input_entry.get()
         dir=filedialog.askdirectory()
         os.chdir(str(dir))
-
         p = pafy.new(url)
         leree.config(text=f'Video:-{p.title}')
         ba = p.getbest()
         filename = ba.download(quiet=True, callback=call)
         start['state']=ACTIVE
-        messagebox.showinfo('Info',f'{p.title} Video Downloaded At {dir}.')
+        leree.config(text=f'')
+        messagebox.showinfo('Info',F'{p.title} Video Downloaded At {dir}')
         input_entry.delete(0,END)
+        leree['text']=''
     except ValueError:
         start['state']=ACTIVE
         messagebox.showinfo('Info','Please Enter A Valid Url!! Or Check The Net Work Connection.')
@@ -59,6 +59,7 @@ def audio():
         start['state']=ACTIVE
         messagebox.showinfo('Info',f'{p.title} Audio Downloaded At {dir}')
         input_entry.delete(0,END)
+        leree['text']=''
     except ValueError:
         start['state']=ACTIVE
         messagebox.showinfo('Info','Please Enter A Valid Url!! Or Check The Net Work Connection.')
@@ -92,7 +93,7 @@ leree.place(y=210,x=1)
 l=Progressbar(root,mode='determinate',length=300,maximum=total_12)
 l.place(y=250,x=165)
 time_left_lab=Label(root,text='',font=('Font',15),fg='darkblue')
-time_left_lab.place(y=250+45+45,x=150)
+time_left_lab.place(y=250+45+45,x=150)#
 file_size_lab=Label(root,text='',font=('Font',15),fg='darkblue')
 file_size_lab.place(x=375,y=250+45+45)
 mainloop()

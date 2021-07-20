@@ -72,7 +72,6 @@ def download_procees():
     else:
         start['state']='disabled'
         threading.Thread(target=down_Video).start()
-menus.add_cascade(label='File',menu=m1,)
 root.geometry('700x400')
 Heading=Label(root,text='''Youtube Video Downloader''',font=('Arial Rounded MT bold',25,'bold'),fg='red')
 Heading.pack()
